@@ -3,11 +3,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.ticker import FuncFormatter
-from model_lstm import predict
-from model_lgbm import predict_grav, map_view
 
-import folium
-from streamlit_folium import st_folium
+#from model_lstm import predict
+#from model_lgbm import predict_grav, map_view
+
+#import folium
+#from streamlit_folium import st_folium
 
 # cd "C:\Python\Datascientest\Projet\8-Streamlit"
 # streamlit run .\streamlit-app.py
