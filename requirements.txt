@@ -1,7 +1,8 @@
 streamlit
 matplotlib
-matplotlib
 numpy
 pandas
 seaborn
 scikit-learn
+folium
+streamlit-folium
