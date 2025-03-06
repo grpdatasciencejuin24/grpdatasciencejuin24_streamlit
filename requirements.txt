@@ -1,2 +1,5 @@
 streamlit
-matplotlib.pyplot
+matplotlib
+matplotlib
+numpy
+pandas
