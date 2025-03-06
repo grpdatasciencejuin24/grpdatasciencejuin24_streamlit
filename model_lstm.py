@@ -67,7 +67,7 @@ def create_future_sequences(data, seq_length, num_future_steps):
 def predict(n_days):
 
     
-    df_accidents = pd.read_csv("accidents.csv"),sep=';',low_memory=False)
+    df_accidents = pd.read_csv("accidents.csv",sep=';',low_memory=False)
 
 
     # Apply the custom function to create a 'date' column
