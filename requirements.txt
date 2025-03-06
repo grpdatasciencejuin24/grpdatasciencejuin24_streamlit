@@ -4,5 +4,4 @@ matplotlib
 numpy
 pandas
 seaborn
-model_lstm
 sklearn
