@@ -2,8 +2,6 @@
 # You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`
 import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
-
-#
 import pandas as pd 
 import numpy as np
 import time
@@ -33,7 +31,6 @@ from pandasql import sqldf
 
 import streamlit as st
 
-import Param as config
 
 def parse_date(row):
     annee = int(row['an'])
@@ -69,10 +66,8 @@ def create_future_sequences(data, seq_length, num_future_steps):
 
 def predict(n_days):
 
-    path = config.PATH
-    path_csv_out = path + 'csv_out'
-
-    df_accidents = pd.read_csv(os.path.join(path_csv_out,"accidents.csv"),sep=';',low_memory=False)
+    
+    df_accidents = pd.read_csv("accidents.csv"),sep=';',low_memory=False)
 
 
     # Apply the custom function to create a 'date' column
