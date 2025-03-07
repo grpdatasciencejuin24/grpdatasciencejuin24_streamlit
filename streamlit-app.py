@@ -49,22 +49,45 @@ def page_introduction():
     )
 
     with tab1:
-        st.markdown(
-            "<h4 style='text-align: center; color: black;'>Contexte métier</h4>",
-            unsafe_allow_html=True,
+        st.markdown("""<h4 style='text-align: center; color: black;'>Contexte métier</h4>""", unsafe_allow_html=True,)
+        
+        st.write(
+        "### 1. Prédiction de la gravité des accidents\n"
+        "- Concevoir des modèles de classification pour distinguer les accidents graves des accidents légers.\n"
+        "- Optimiser la prise en charge médicale en identifiant rapidement les blessés graves.\n"
+        "- Comparer les performances des modèles pour maximiser le rappel (recall) et minimiser les faux négatifs.\n"
         )
-
+        st.write(
+        "### 2. Prévision du nombre d’accidents\n"
+        "- Utiliser un modèle de Deep Learning (LSTM) pour prévoir le nombre total d’accidents en France.\n"
+        "- Aider les autorités à mieux allouer les ressources et anticiper les périodes à risque.\n"
+        "- Réduire l’incertitude et améliorer la planification des mesures de prévention.\n"
+        )
+        
     with tab2:
         st.markdown(
             "<h4 style='text-align: center; color: black;'>Méthodologie</h4>",
             unsafe_allow_html=True,
         )
-
+        st.write(
+        "### 1. Modélisation de la gravité des accidents avec le Machine Learning\n"
+        "- Utilisation de Lazy Predict pour évaluer rapidement plusieurs modèles.\n"
+        "- Sélection de 5 modèles : BalancedRandomForestClassifier, XGBoost, LGBMClassifier, AdaBoostClassifier, BaggingClassifier.\n"
+        "- Optimisation via RandomizedSearchCV et parallélisation CPU.\n"
+        )
+        st.write(
+        "### 2. Modélisation du nombre d’accidents avec le Deep Learning (LSTM)\n"
+        "- Modèle Long Short-Term Memory (LSTM) entraîné sur les données de 2019-2023.\n"
+        "- Utilisation du MAPE et sMAPE comme métriques.\n"
+        "- Prise en compte des biais dus aux confinements COVID-19.\n"
+        )
+     
     with tab3:
         st.markdown(
             "<h4 style='text-align: center; color: black;'>Le planning du projet et les jalons</h4>",
             unsafe_allow_html=True,
         )
+        st.image("img/planning.jpg")
 
 
 def tab_mapview():
@@ -128,12 +151,53 @@ def page_EAD():
             "<h4 style='text-align: center; color: black;'>Modèle de données</h4>",
             unsafe_allow_html=True,
         )
+        st.write(
+        "### 1. Source des données\n"
+        "- 2 sources de données : data.gouv.fr et Kaggle.\n"
+        "- 4 catégories : Usagers, Véhicules, Lieux et Caractéristiques.\n"
+        "- Données sur une période de 2008 à 2023.\n"
+        )
+        st.write(
+        "### 2. Analyse des données source\n"
+        "- Doublons de données entre les 2 sources.\n"
+        "- Les modèles de données ont évolué avec le temps : informations supplémentaires ou gestion différente .\n"
+        )
+        st.write(
+        "### 3. Données de travail\n"
+        "- Uniquement les fichiers provenant de data.gouv.fr.\n"
+        "- Uniquement sur la période de 2019 à 2023 car des données complémentaires ont été ajoutées à partir de 2019 et il n'était pas possible d'alimenter les données manquantes sur les années précédentes.\n"
+        )
+        st.write(
+        "### 4. Analyse exploiratoire\n"
+        "- Consolidation des données dans un DataFrame.\n"
+        "- Etude et traitement des doublons, valeurs manquantes et des outliers.\n"
+        "- Etude des répartitions des variables par de la datavisualisation.\n"
+        "- Bonus : affichage des accidents sur une mapView par gravité.\n"
+        )
+        st.write(
+        "### 5. Pre processing et Features engineering\n"
+        "- Regroupement des modalités.\n"
+        "- Standardisation des variables continues.\n"
+        "- Etude des corrélations entre les variables : V-Cramer et HeatMap\n"
+        )
 
     with tab2:
         st.markdown(
             "<h4 style='text-align: center; color: black;'>Répartition des classes</h4>",
             unsafe_allow_html=True,
         )
+        st.write(
+        "##### La variable cible contient plusieurs classes (Indemne, blessé léger, blessé hospitalisé et tué) mais afin de répondre à notre problématique nous avons fait le choix de passer la variable en binaire avec les 2 classes suivantes:\n"
+        )
+        st.write(
+        "- Classe 0 : indemnes et blessés légers.\n"
+        "- Classe 1 : Tous les autres cas (tué sur le coup et ceux qui décédent dans les 30 jours suivant l'accident).\n"
+        )
+        st.write(
+        "- Nos analyses sur plusieurs modèles ont également montrées que les résultats étaient plus mauvais en multi-classe qu'en classe binaire. Cela a permis de nous réconforter dans notre choix.\n"
+        "- La répartition de la variable cible montre une forte disparité : on se retrouve donc face à un problème de classe déséquilibrée. Un travail de resampling sera donc mis en place dans l'étude des modèles.\n"
+        )
+        st.image("img/classe_target.jpg")
 
     with tab3:
         st.markdown(
@@ -478,11 +542,7 @@ match page:
 
 st.divider()
 st.sidebar.info(
-    """ Vincent KOMIWES,
-       Sidney HANIFA,           
-       Farah VARSALLY,
-       Simon-Pierre SILGA
-       Mentor : Eliott DOUIEB
-    """
+    "Vincent KOMIWES, Sidney HANIFA, Farah VARSALLY, Simon-Pierre SILGA\n\n"
+    "Mentor : Eliott DOUIEB"
 )
 
