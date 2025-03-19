@@ -80,7 +80,7 @@ st.sidebar.markdown(
 )
 
 st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/your-profile-username/">Sidney HANIFA <img src="data:image/png;base64,{}" width="25"></a>""".format(
+    """<a href="https://www.linkedin.com/in/sidneyhanifa/">Sidney HANIFA <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
@@ -96,6 +96,14 @@ st.sidebar.markdown(
 st.sidebar.markdown(
     """<a href="https://www.linkedin.com/in/your-profile-username/">Farah VARSALLY <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
+    ),
+    unsafe_allow_html=True,
+)
+
+
+st.sidebar.markdown(
+    """</br></br><a href="https://github.com/grpdatasciencejuin24/DS_Accidents_June2024">Projet Github <img src="data:image/png;base64,{}" width="25"></a>""".format(
+        base64.b64encode(open("img/GitHub.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
 )
