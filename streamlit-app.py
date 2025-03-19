@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from matplotlib.ticker import FuncFormatter
 from model_lstm import predict
-from model_lgbm import predict_grav, map_view
+from model_lgbm import predict_grav
+from streamlit_para import map_view
 import folium
 from streamlit_folium import st_folium
 
