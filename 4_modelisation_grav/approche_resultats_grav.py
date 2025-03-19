@@ -79,7 +79,7 @@ Le paramètre pertinent était le scale_pos_weight calculé à partir du taux de
 """
 st.write(text)
 
-image_path = "img/evaluation_finale_ML.png" 
+image_path = "img/Evaluatrion_finale_ML.png" 
 st.image(image_path, width=1000)
 
 text = """
