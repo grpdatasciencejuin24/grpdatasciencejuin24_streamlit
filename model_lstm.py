@@ -2,6 +2,8 @@
 # You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`
 import os
 os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
+
+#
 import pandas as pd 
 import numpy as np
 import time
@@ -26,11 +28,9 @@ from tensorflow.keras.optimizers import Adam
 
 from keras.models import load_model
 
-import pandasql as ps
-from pandasql import sqldf
-
 import streamlit as st
 
+import streamlit_param as config
 
 def parse_date(row):
     annee = int(row['an'])
@@ -63,28 +63,20 @@ def create_future_sequences(data, seq_length, num_future_steps):
         sequences.append(seq)
     return np.array(sequences[-num_future_steps:])
 
-
+@st.cache_resource
 def predict(n_days):
 
-    
-    df_accidents = pd.read_csv("accidents.csv",sep=';',low_memory=False)
+    path = config.PATH
+    path_csv_out = path + 'data'
 
+    df_casualty = pd.read_csv(os.path.join(path_csv_out,"casualty.csv"),sep=';',low_memory=False)
 
-    # Apply the custom function to create a 'date' column
-    df_accidents['date'] = df_accidents.apply(parse_date, axis=1)
-
-    df_accidents = df_accidents.drop(['an','mois','jour','hrmn'],axis=1).copy()
-
-    df_accidents['date'] = pd.to_datetime(df_accidents['date'])
-    df_accidents['date'] = df_accidents['date'].dt.strftime('%Y-%m-%d')
-
-    columns = ['date','grav']
-    df_accidents = df_accidents[columns].copy()
-
-    df_casualty = sqldf('''SELECT date,count(*) as n_casualty FROM df_accidents GROUP BY date''')
     df_casualty['date'] = pd.to_datetime(df_casualty['date'])
 
+    df_casualty.head(10)
     df_casualty = df_casualty.reset_index()
+
+    df_casualty.info()
 
     model = load_model("model/model_lstm.keras")
 

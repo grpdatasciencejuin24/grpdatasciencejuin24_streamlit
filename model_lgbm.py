@@ -1,14 +1,12 @@
+import streamlit as st
+
 import lightgbm as lgbm
 from lightgbm import LGBMClassifier
 import pandas as pd 
 
 import joblib
 
-import os 
-import folium
-from streamlit_folium import st_folium
-
-
+@st.cache_resource
 def predict_grav(lat, long, age, hour, 
                  place, sexe, secu1, catv, obs, obsm, choc, lum, agg, int, atm, col, catr, plan, situ, isweekend, saison, holidays):
     pipeline = joblib.load('model/pipeline_lightgbm_1.joblib')
@@ -61,22 +59,4 @@ def predict_grav(lat, long, age, hour,
 
     return pred
 
-
-def map_view(lat,long,vcolor, popup_message):
-
-    map_center = [lat, long]
-
-    m = folium.Map(location=map_center, zoom_start=15)
-
-    folium.CircleMarker(
-                    location=[lat, long],
-                    radius=15,
-                    color=vcolor,  # Couleur en fonction de la probabilité
-                    fill=True,
-                    fill_color=vcolor,
-                    fill_opacity=0.6,
-                    popup=popup_message
-                    ).add_to(m)
-
-    st_data = st_folium(m, width=725)
 
