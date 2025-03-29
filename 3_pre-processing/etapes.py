@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_utils import css_code, write_text, banner
 
 
-banner()
+banner("data_analyse")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
@@ -16,4 +16,4 @@ text = "Cette phase consiste à déterminer et traiter les données brutes non a
 write_text(text)
 write_text("")
 image_path = "img/image041.png" 
-st.image(image_path, width=1000)
+st.image(image_path, width=1400)

@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_utils import css_code, write_text, banner
 
 
-banner()
+banner("data_analyse")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
@@ -26,5 +26,5 @@ text = "- L'intégration automatique des 20 fichiers BACC (années 2019 à 2023)
 st.markdown(text)
 
 
-text = "Nous obtenons au final un dataset constitué de 518885 lignes avec 16% du jeu de données initial supprimés sans changement significatif sur la répartition de la variable cible."
+text = "Nous obtenons au final un dataset constitué de 518885 lignes avec 16% du jeu de données initial supprimés sans changement significatif sur la répartition de la variable cible, avec 23 variables."
 write_text(text)
