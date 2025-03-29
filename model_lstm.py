@@ -30,6 +30,7 @@ from keras.models import load_model
 
 import streamlit as st
 
+import streamlit_param as config
 
 def parse_date(row):
     annee = int(row['an'])
@@ -65,8 +66,10 @@ def create_future_sequences(data, seq_length, num_future_steps):
 @st.cache_resource
 def predict(n_days):
 
-    
-    df_casualty = pd.read_csv("data/casualty.csv",sep=';',low_memory=False)
+    path = config.PATH
+    path_csv_out = path + 'data'
+
+    df_casualty = pd.read_csv(os.path.join(path_csv_out,"casualty.csv"),sep=';',low_memory=False)
 
     df_casualty['date'] = pd.to_datetime(df_casualty['date'])
 
@@ -114,4 +117,6 @@ def predict(n_days):
     plt.ylabel("Nombre d'accidents")
     st.pyplot(fig)
 
-    return
+    nb_acc = future_predictions.sum()
+
+    return nb_acc
