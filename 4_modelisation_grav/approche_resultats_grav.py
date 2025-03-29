@@ -1,19 +1,44 @@
 import streamlit as st
 from streamlit_utils import css_code, write_text, banner
 
-banner()
+banner("machine_learning")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
 st.title("Modélisation de la gravité")
 
-st.header("Approche utilisée")
+help_msg = """
+La mesure dite de **recall**, adaptée aux classes déséquilibrées, mesure la capacité du modèle à identifier les vrais positifs.\n
+Elle est définie par la formule suivante : VP / ( VP + FN )
+\n
+Plus la valeur est proche de 1, plus le nombre de faux négatifs est faible, et le nombre de vrai positif est élevé.\n
+**Vrai positif (VP) :**
+\n Définition : Le modèle a correctement prédit la valeur comme appartenant à la classe positive.
+\n Cas exemple 1 : Le modèle prédit qu'un patient est malade, et le patient est effectivement malade.
+\n Cas exemple 2 : Le modèle prédit qu’une victime est blessée grave, décédée sur le coup ou dans les 30 jours, est c’est effectivement le cas.
+ 
+\n
+**Faux positif (FP) :**
+\n Définition : Le modèle a incorrectement prédit la valeur comme appartenant à la classe positive, alors que l'exemple appartient à la classe négative (par exemple, "non malade" dans le cas d'un diagnostic médical).
+\n Cas exemple 1 : Le modèle prédit qu'un patient est malade, mais le patient est en réalité sain
+\n Cas exemple 2 : Le modèle prédit qu’une victime est blessée grave, décédée sur le coup ou dans les 30 jours, mais la victime est en fait indemne ou blessée léger.
+
+\n
+**Faux négatif (FN) :**
+\n Définition : Le modèle a incorrectement prédit la valeur comme appartenant à la classe négative, alors que la valeur appartient à la classe positive.
+\n Cas exemple 1 : Le modèle prédit qu'un patient n'est pas malade, alors que le patient est effectivement malade.
+\n Cas exemple 2 : Le modèle prédit qu’une victime est en fait indemne ou blessée léger alors qu’elle est blessée grave, décédée sur le coup ou dans les 30 jours
+
+\n
+**Vrai négatif (VN) :**
+\n Définition : Le modèle a correctement prédit une valeur comme appartenant à la classe négative.
+\n Cas exemple 1 : Le : Le modèle prédit qu'un patient n'est pas malade, et le patient est effectivement en bonne santé.
+\n Cas exemple 2 :  Le modèle prédit qu’une victime est en fait indemne ou blessée léger, ce qui est effectivement le cas.
+"""
+
+st.header("Approche et métrique utilisées", help=help_msg)
 
 text = """
-La mesure dite de recall, adaptée aux classes déséquilibrées, mesure la capacité du modèle à identifier les vrais positifs.\n
-La métrique du rappel est définie par la formule suivante :\n  
-VP / ( VP + FN )  \n
-Plus la valeur sera proche de 1, plus le nombre de faux négatifs sera faible et le nombre de vrai positif sera élevé. C’est cette valeur qu’il conviendra d’optimiser par la suite.\n
 Par rapport à notre cas d’usage métier, nous souhaitons prédire le mieux possible les vrais positifs et réduire le plus possible les faux négatifs de la classe 1 qui nécessitent des soins d’urgence et adaptés en milieu hospitalier.
 Dans ce cas, la métrique la plus appropriée pour évaluer les performances du modèle de classification de l’objectif métier est le recall :
 \n - Elle est adaptée à notre cas de classes déséquilibrées
@@ -24,13 +49,14 @@ Nous regarderons également l’effort de computing, qui représente un coût pa
 """
 st.markdown(text)
 
+
 text = """
 Pour comparer les modèles, nous allons utiliser l’approche représentée par le schéma ci-dessous :
 """
 write_text(text)
 
 image_path = "img/image068.png" 
-st.image(image_path, width=1000)
+st.image(image_path, width=1400)
 
 st.header("Résultats")
 
@@ -79,7 +105,7 @@ Le paramètre pertinent était le scale_pos_weight calculé à partir du taux de
 """
 st.write(text)
 
-image_path = "img/Evaluatrion_finale_ML.png" 
+image_path = "img/evaluatrion_finale_ML.png" 
 st.image(image_path, width=1000)
 
 text = """
