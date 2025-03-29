@@ -14,7 +14,7 @@ def write_text(text):
     st.write(text)
 
 
-def banner(val):
+def banner3(val):
 
     return
 
@@ -35,7 +35,7 @@ def banner2(val):
     return
     
 
-def banner3(val):
+def banner(val):
 
     match val:
         case "neural_network":
