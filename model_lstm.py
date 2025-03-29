@@ -67,7 +67,7 @@ def create_future_sequences(data, seq_length, num_future_steps):
 def predict(n_days):
 
     path = config.PATH
-    path_csv_out = path + 'data'
+    path_csv_out = "data"
 
     df_casualty = pd.read_csv(os.path.join(path_csv_out,"casualty.csv"),sep=';',low_memory=False)
 
