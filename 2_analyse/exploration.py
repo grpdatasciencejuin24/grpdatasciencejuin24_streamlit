@@ -2,7 +2,7 @@ import streamlit as st
 from streamlit_utils import css_code, write_text, banner
 
 
-banner()
+banner("data_analyse")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
