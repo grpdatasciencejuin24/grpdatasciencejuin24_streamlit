@@ -14,8 +14,8 @@ def write_text(text):
     st.write(text)
 
 
-def banner3(val):
-
+def banner(val):
+    set_bg_hack("img/background.png")
     return
 
 
@@ -35,7 +35,7 @@ def banner2(val):
     return
     
 
-def banner(val):
+def banner3(val):
 
     match val:
         case "neural_network":
