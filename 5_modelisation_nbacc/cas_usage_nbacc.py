@@ -1,12 +1,12 @@
 import streamlit as st
 from streamlit_utils import css_code,write_text, banner, map_view
 
-banner()
+banner("accident")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
 st.title("Modélisation du nombre d'accidents")
-st.header("Description du cas d'usage et du contexte métier")
+st.header("Cas d'usage métier et objectifs")
 
 text = """
 La prévision du nombre total des accidents permettrait de demander, de justifier et de mettre en place les moyens nécessaires (optimiser l’affectation et la mobilisation des forces de l’ordre sur l’ensemble du territoire, développer des campagnes de sensibilisation et de dissuasion *, …) pour répondre aux directives de la CEE.
@@ -18,9 +18,8 @@ Dans un contexte de réduction des dépenses, la prédiction du volume annuel d�
 write_text(text)
 
 image_path = "img/cas_usage_2.jpg" 
-st.image(image_path, width=600)
+st.image(image_path, width=400)
 
-st.header("Objectifs")
 
 text = """ 
 Nos objectifs sont les suivants :

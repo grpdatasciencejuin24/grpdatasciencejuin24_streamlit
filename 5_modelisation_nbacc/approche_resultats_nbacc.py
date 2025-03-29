@@ -1,7 +1,7 @@
 import streamlit as st
 from streamlit_utils import css_code, write_text, banner
 
-banner()
+banner("neural_network")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
@@ -11,7 +11,7 @@ st.header("Approche utilisée")
 
 text = """
 LSTM (Long Short-Term Memory) est une méthode de Deep learning très efficace pour traiter les séries temporelles. Nous souhaitons la mettre à profit pour concevoir un modèle, l’évaluer, et sous réserve de performances acceptables, l’utiliser pour prédire le nombre d’accidents annuels.
-Les modèles de mémoire à long terme LTSM (11), (12) sont un type d'architecture de réseau neuronal récurrent (RNN)*. Ils ont récemment acquis une importance significative dans le domaine du Deep Learning.
+Les modèles de mémoire à long terme LTSM sont un type d'architecture de réseau neuronal récurrent (RNN)*. Ils ont récemment acquis une importance significative dans le domaine du Deep Learning.
 
 * Structure des RNN : Contrairement aux réseaux de neurones classiques (comme les perceptrons multicouches), un RNN a une structure de boucle qui permet aux informations de circuler non seulement d'un neurone à un autre, mais aussi à travers les étapes du temps. Chaque sortie d'une cellule de RNN à un moment donné devient l'entrée pour le même neurone à l'instant suivant, ce qui permet au réseau de garder une mémoire des événements passés.
 
@@ -24,12 +24,12 @@ st.image(image_path, width=500)
 
 
 text = """
-Pour comparer les modèles, nous allons utiliser l’approche représentée par le schéma ci-dessous :
+Pour comparer les différents paramètres, nous allons utiliser l’approche représentée par le schéma ci-dessous :
 """
 write_text(text)
 
 image_path = "img/image087.png" 
-st.image(image_path, width=1000)
+st.image(image_path, width=1200)
 
 
 st.header("Résultats")
@@ -37,10 +37,10 @@ st.header("Résultats")
 st.subheader("Baseline")
 
 text = """
-Nous obtenons une convergence de la fonction de perte (Loss) vers 0 sur l’ensemble de training comme sur l’ensemble de test avec les paramètres ci-dessous. Cf graphique ci-dessous.
-L’erreur qui tend vers 0 sur l'ensemble de training montre la capacité du modèle à apprendre avec une augmentation de la précision pour l’apprentissage.
-L’erreur qui tend vers 0 sur l'ensemble de test montre la capacité du modèle à généraliser sur des données nouvelles, qu'il ne connaît pas, c’est-à-dire sans overfitting, ce qui est très encourageant.
+Nous observons une convergence de la fonction de perte (Loss) vers 0, aussi bien sur l’ensemble d’entraînement que sur l’ensemble de test, avec les paramètres ci-dessous (voir graphique).
+Une erreur tendant vers 0 sur l’ensemble d’entraînement indique que le modèle apprend efficacement et que la précision augmente durant l’apprentissage. De même, une erreur proche de 0 sur l’ensemble de test suggère que le modèle généralise bien sur des données nouvelles qu’il n’a jamais vues, sans signe d’overfitting, ce qui est très encourageant.
 """
+
 st.write(text)
 
 image_path = "img/image091.png" 
@@ -75,7 +75,7 @@ image_path = "img/image095.png"
 st.image(image_path, width=1000)
 
 text = """
-Après tuning, la convergence de la fonction Loss est un peu moins rapide, mais tout de même très satisfaisante.  
+Après tuning, on observe une convergence de la fonction Loss vers 0, équivalente entre l’ensemble de validation et d’entrainement.
 Nous obtenons les valeurs suivantes qui sont très satisfaisantes sur les ensembles de training et de test, avec une légère amélioration :
 \n - MAPE sur l’ensemble de training : 13.19%
 \n - sMAPE sur l’ensemble de training : 12.47%

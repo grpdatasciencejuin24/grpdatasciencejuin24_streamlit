@@ -3,8 +3,7 @@ from model_lstm import predict
 from streamlit_utils import css_code,write_text, banner, map_view
 
 
-
-banner()
+banner("neural_network")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
@@ -17,4 +16,8 @@ n_days = st.select_slider("Choisissez le nombre de jours pour la prédiction du 
 result = st.button("Predict")
 if result:
     #st.write("Nombre de jours de prédiction:",n_days)
-    predict(n_days)
+    nb_acc = predict(n_days)
+
+    st.info("Le modèle prédit un nombre d'accidents cumulés de "+str(int(nb_acc))+" sur la période des "+str(n_days)+" prochains jours de l'année.", icon="ℹ️")
+
+             
