@@ -51,10 +51,11 @@ def tab_methodologie_planning():
     #video_file = open("img/Animation1.mp4", "rb")
     #video_bytes = video_file.read()
 
-    #container1.video(video_bytes,loop=True, autoplay=True)
+    #url= "https://drive.google.com/file/d/1KIB9nJe90ZgjTu-LEXFWn_vaPAP-qaUh/view?usp=drive_link"
+    #container1.video(url,loop=True, autoplay=True)
 
     image_path = "img/Phases.png" 
-    container1.image(image_path, width=1400) 
+    container1.image(image_path, width=1200) 
 
     return
 
