@@ -13,6 +13,12 @@ css_code = """
 def write_text(text):
     st.write(text)
 
+
+def banner(val):
+
+    return
+
+
 def banner2(val):
 
     match val:
@@ -29,7 +35,7 @@ def banner2(val):
     return
     
 
-def banner(val):
+def banner3(val):
 
     match val:
         case "neural_network":
