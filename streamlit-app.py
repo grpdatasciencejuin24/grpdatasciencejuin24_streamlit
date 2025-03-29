@@ -1,8 +1,10 @@
 # Date : 17/03/2025
 # Version : 1.0
+# Created by : Vincent
+# Validated by : Sydney
 # Directory structure
 # streamlit repository/
-#├── 1_introduction
+#├── 1_introduction   
 #│   ├── introduction.py
 #├── 2_analyse
 #│   └── description.py
@@ -33,11 +35,19 @@
 
 import streamlit as st
 import base64
+from streamlit_utils import set_bg_hack
 
 
 st.set_page_config(layout="wide")
 
-introduction = st.Page("1_introduction/introduction.py", title="Contexte, enjeux et méthodologie", icon=":material/dashboard:")
+#set_bg_hack("img/background.png")
+
+# icon
+# https://streamlit-emoji-shortcodes-streamlit-app-gwckff.streamlit.app/
+# https://fonts.google.com/icons?icon.set=Material+Symbols&icon.style=Rounded
+# 	
+
+introduction = st.Page("1_introduction/introduction.py", title="Contexte, enjeux et méthodologie", icon=":material/home:")
 
 description = st.Page("2_analyse/description.py", title="Description des données", icon=":material/dashboard:")
 exploration = st.Page("2_analyse/exploration.py", title="Exploration et data visualisation", icon=":material/dashboard:")
@@ -54,7 +64,7 @@ approche_resultats_nbacc = st.Page("5_modelisation_nbacc/approche_resultats_nbac
 prediction_nbacc = st.Page("5_modelisation_nbacc/prediction_nbacc.py", title="Prédiction", icon=":material/dashboard:")
 
 
-conclusion = st.Page("6_conclusion/conclusion.py", title="Conclusion et perspectives", icon=":material/search:")
+conclusion = st.Page("6_conclusion/conclusion.py", title="Conclusion et perspectives", icon=":material/dashboard:")
 
 
 pg = st.navigation(
@@ -80,7 +90,7 @@ st.sidebar.markdown(
 )
 
 st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/sidneyhanifa/">Sidney HANIFA <img src="data:image/png;base64,{}" width="25"></a>""".format(
+    """<a href="https://www.linkedin.com/in/your-profile-username/">Sidney HANIFA <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
@@ -100,10 +110,9 @@ st.sidebar.markdown(
     unsafe_allow_html=True,
 )
 
-
 st.sidebar.markdown(
-    """</br></br><a href="https://github.com/grpdatasciencejuin24/DS_Accidents_June2024">Projet Github <img src="data:image/png;base64,{}" width="25"></a>""".format(
-        base64.b64encode(open("img/GitHub.png", "rb").read()).decode()
+    """<a href="https://github.com/DataScientest-Studio/JUIN24_CDS_Accidents/"><img src="data:image/png;base64,{}" width="25"></a>""".format(
+        base64.b64encode(open("img/github.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
 )
