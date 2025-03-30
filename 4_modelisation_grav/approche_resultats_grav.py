@@ -60,7 +60,7 @@ st.image(image_path, width=1400)
 
 st.header("Résultats")
 
-st.subheader("LasyClassifieur")
+st.subheader("LazyClassifieur")
 
 text = """
 Lazy Predict est un excellent point de départ pour identifier rapidement le modèle le plus approprié. Dans notre cas, il a permis d’évaluer 25 modèles de classification, et de retenir le TOP des 4 meilleurs modèles les plus performants :
