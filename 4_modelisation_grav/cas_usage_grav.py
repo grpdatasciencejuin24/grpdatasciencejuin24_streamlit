@@ -31,8 +31,8 @@ text = "Ces objectifs permettront de prioriser les moyens des urgences pour réd
     "conformément aux enjeux du Ministère de la santé décrits dans le cas d’usage."
 write_text(text)
 
-info_msg = "**Le Data Challenge WAICF :**"\
-"Durant l’année 2020, dans le cadre du salon de l'intelligence artificielle WAICF, Trustii.io a organisé un Data Challenge." \
+info_msg = "Le Data Challenge WAICF :"\
+" Durant l’année 2020, dans le cadre du salon de l'intelligence artificielle WAICF, Trustii.io a organisé un Data Challenge." \
     " L’objectif était de construire des modèles de machine learning pour prédire la gravité des accidents de la route." \
     "Les sources de données provenaient des sites data.gov.fr et data.gov.uk des années 2016 à 2020." \
     "Pendant 48h, 83 participants issues de plusieurs universités et écoles en France et à l'étranger, ont soumis plus de 235 models, plusieurs participants ont participé en équipe." \
