@@ -494,7 +494,7 @@ def prediction_app(lat, long, age, hour, place, sexe, secu1, catv, obs, obsm, ch
                     pred_message = "le modèle prédit la classe 1"
                     vcolor = f'#e74c3c'
 
-        st.write(pred_message)
+        st.info(pred_message, icon="ℹ️")
 
 st.markdown(css_code, unsafe_allow_html=True)
 
