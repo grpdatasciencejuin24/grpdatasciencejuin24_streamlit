@@ -16,8 +16,9 @@ def tab_contexte_enjeux():
     container1 = st.container(border=True)
     container1.header("Contexte et enjeux")
     text = """Un accident de la route est une collision non intentionnelle, qui a lieu sur le réseau routier entre un engin roulant (automobile, camion, moto, vélo, …) 
-        et tout autre véhicule, personne ou animal, se déplaçant ou non, engendrant au moins des dégâts matériels, voire des traumatismes ou le décès d'une ou plusieurs personnes impliquées.
-        Les enjeux sont donnés ci-après, suivants les Ministères :
+        et tout autre véhicule, personne ou animal, se déplaçant ou non, engendrant au moins des dégâts matériels, voire des traumatismes ou le décès d'une ou plusieurs personnes impliquées. 
+        La CEE a pour objectif de diminuer de moitié le nombre de morts et de blessés graves sur les routes pour 2030, et à le réduire à zéro ou presque à l'horizon 2050. La France devant s’aligner sur ces objectifs, 
+        les enjeux associées sont donnés ci-après, suivants les Ministères :
 \n
 1.	Pour le Ministère de la santé, 
  
@@ -48,14 +49,18 @@ def tab_methodologie_planning():
 
     container1.write(text)
 
-    #video_file = open("img/Animation1.mp4", "rb")
-    #video_bytes = video_file.read()
+    option = container1.selectbox(
+    "",
+    ("Image","Vidéo"),
+    )
 
-    #url= "https://drive.google.com/file/d/1KIB9nJe90ZgjTu-LEXFWn_vaPAP-qaUh/view?usp=drive_link"
-    #container1.video(url,loop=True, autoplay=True)
-
-    image_path = "img/Phases.png" 
-    container1.image(image_path, width=1200) 
+    if option == "Vidéo":
+        video_file = open("img/Animation1.mp4", "rb")
+        video_bytes = video_file.read()
+        container1.video(video_bytes,loop=True, autoplay=True)
+    if option == "Image":
+        image_path = "img/Phases.png" 
+        container1.image(image_path, width=1200) 
 
     return
 
