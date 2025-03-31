@@ -11,10 +11,10 @@ st.title("Pre-processing et features engineering")
 st.header("Synthèse des résultats")
 
 image_path = "img/pre-processing-2.png" 
-st.image(image_path, width=1000)
+st.image(image_path, width=1400)
 
 st.write("Les actions réalisées ont permis d'effectuer :")
-text = "- L'intégration automatique des 20 fichiers BACC (années 2019 à 2023) dans un dataframe consolidé avec 619971 lignes concaténées"\
+text = "- L'intégration automatique des 20 fichiers BACC (années 2019 à 2023) dans un dataframe consolidé avec 619 971 lignes concaténées"\
            "\n- 58 variables, incluant l'ajout de la région et de la zone géographique"\
            "\n- La suppression des variables avec un nombre important de valeurs nulles (supérieur à 50%) soit un nombre de variables réduites à 23, des lignes en doublons (164), des valeurs manquantes,"\
            "des valeurs aberrantes (âge>100 ans, coordonnées GPS situées hors des limites du département, ...)"\
@@ -26,5 +26,5 @@ text = "- L'intégration automatique des 20 fichiers BACC (années 2019 à 2023)
 st.markdown(text)
 
 
-text = "Nous obtenons au final un dataset constitué de 518885 lignes avec 16% du jeu de données initial supprimés sans changement significatif sur la répartition de la variable cible, avec 23 variables."
+text = "Nous obtenons au final un dataset constitué de 518 885 lignes avec 16% du jeu de données initial supprimés sans changement significatif sur la répartition de la variable cible, avec 23 variables."
 write_text(text)
