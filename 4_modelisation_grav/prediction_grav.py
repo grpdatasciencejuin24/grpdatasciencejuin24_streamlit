@@ -471,9 +471,6 @@ def prediction_app(lat, long, age, hour, place, sexe, secu1, catv, obs, obsm, ch
     # VKO 25/03/2025
     #st.write(lat, long, age, hour, place, sexe, secu1, catv, obs, obsm, choc, lum, agg, int, atm, col, catr, plan, situ, isweekend, saison, holidays)
 
- 
-
-
     on = st.toggle('Afficher la géolocalisation avec la valeur prédite')
     if on:   
             pred = predict_grav(lat, long, age, hour, place, sexe, secu1, catv, obs, obsm, choc, lum, agg, int, atm, col, catr, plan, situ, isweekend, saison, holidays)
@@ -485,7 +482,19 @@ def prediction_app(lat, long, age, hour, place, sexe, secu1, catv, obs, obsm, ch
                     vcolor = f'#e74c3c'     
             map_view(lat, long, vcolor, pred_message) 
 
-    
+
+    result = st.button("Predict")
+    if result:
+        pred = predict_grav(lat, long, age, hour, place, sexe, secu1, catv, obs, obsm, choc, lum, agg, int, atm, col, catr, plan, situ, isweekend, saison, holidays)
+            
+        if pred == 0:
+                    pred_message = "le modèle prédit la classe 0"
+                    vcolor = f'#229954'
+        else:
+                    pred_message = "le modèle prédit la classe 1"
+                    vcolor = f'#e74c3c'
+
+        st.write(pred_message)
 
 st.markdown(css_code, unsafe_allow_html=True)
 
