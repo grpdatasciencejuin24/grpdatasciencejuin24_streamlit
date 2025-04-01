@@ -99,3 +99,5 @@ st.write(text)
 
 image_path = "img/image019.png" 
 st.image(image_path, width=800)
+
+st.info("L’analyse exploratoire des données nous a permis de constater un déséquilibre globale des classes de chacune des variables en fonction de la gravité et la sous-représentation de certaines classes", icon="ℹ️")
