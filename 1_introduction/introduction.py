@@ -27,12 +27,13 @@ L’enjeu est de connaître au plus tôt si les victimes d’ accidents sont ble
 2.	Pour le Ministère de l’intérieur,
  
 L’enjeu est de prédire le nombre total des accidents pour justifier et mettre en place les moyens nécessaires (optimiser l’affectation et la mobilisation des forces de l’ordre sur l’ensemble du territoire, développer des campagnes de sensibilisation et de dissuasion *, …) pour répondre aux directives de la CEE.
-Les cas d’usages métiers sont détaillés dans les parties de modélisation.
-
 
 \n
 *lutte contre la consommation d’alcool et de stupéfiants, utilisation du téléphone portable au volant, limitation de vitesse, contrôle de vitesse, contrôle du taux d’alcoolémie, …
 """
+
+
+    container1.info("Les cas d’usages métiers sont détaillés dans les parties de modélisation.", icon="ℹ️")
 
     container1.write(text)
 
