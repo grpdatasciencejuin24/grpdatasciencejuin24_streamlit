@@ -32,11 +32,9 @@ L’enjeu est de prédire le nombre total des accidents pour justifier et mettre
 *lutte contre la consommation d’alcool et de stupéfiants, utilisation du téléphone portable au volant, limitation de vitesse, contrôle de vitesse, contrôle du taux d’alcoolémie, …
 """
 
-
-    container1.info("Les cas d’usages métiers sont détaillés dans les parties de modélisation.", icon="ℹ️")
-
     container1.write(text)
 
+    container1.info("Les cas d’usages métiers sont détaillés dans les parties de modélisation.", icon="ℹ️")
 
 def tab_methodologie_planning():
 
