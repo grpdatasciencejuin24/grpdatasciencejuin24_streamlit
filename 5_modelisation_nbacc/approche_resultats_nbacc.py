@@ -18,9 +18,17 @@ def tab_approche():
     \n
     Contrairement aux réseaux de neurones classiques (comme les perceptrons multicouches), un RNN a une structure de boucle qui permet aux informations de circuler non seulement d'un neurone à un autre, mais aussi à travers les étapes du temps. Chaque sortie d'une cellule de RNN à un moment donné devient l'entrée pour le même neurone à l'instant suivant, ce qui permet au réseau de garder une mémoire des événements passés.
 
-    LSTM repose sur trois portes principales : la porte d'entrée (input gate), la porte d'oubli (forget gate) et la porte de sortie (output gate).  
+     
     """
     write_text(text)
+
+
+    text = """
+    LSTM repose sur trois portes principales : la porte d'entrée (input gate), la porte d'oubli (forget gate) et la porte de sortie (output gate). 
+    Le schéma ci-dessous représente le mécanisme complexe mis en ouvre dans ce modèle:  on utilisera le LSTM comme une boîte noire.
+    """
+
+    st.info(text, icon="ℹ️")
 
     image_path = "img/image086.png" 
     st.image(image_path, width=500)
@@ -28,7 +36,7 @@ def tab_approche():
 
     text = """
     Pour évaluer les performances du modèle, nous allons utiliser des métriques spécifiques aux séries temporelles en évaluant la qualité de la précision avec le Mean Absolute Percentage Error (MAPE) et le Symmetric Mean Absolute Percentage Error (sMAPE).
-    lus ces valeurs sont faibles (proche de 0), meilleure est la prédiction.
+    Plus ces valeurs sont faibles (proche de 0), meilleure est la prédiction.
     """
     st.write(text)
 
@@ -110,9 +118,10 @@ def tab_resultats():
 
     text = """
     L’écart relatif entre le nombre d’accidents prédit par le modèle et le nombre d’accidents réels sur l’année 2023 est très faible, de 0.6 %, ce qui est excellent. 
-    Cela répond pleinement à notre objectif, et le modèle est largement suffisant pour prédire le nombre d’accidents moyens annuels, où la prédiction des pics n’est pas déterminante.
+    Cela répond pleinement à notre objectif, et le modèle est largement suffisant pour prédire le nombre annuel d’accidents, où la prédiction des pics n’est pas déterminante.
     """
-    st.write(text)
+
+    st.info(text, icon="ℹ️")
 
     return
 
