@@ -81,17 +81,8 @@ def tab_resultats():
     st.subheader("Tuning des Hyperparamètres et performances finales")
 
     text = """
-    Nous avons utilisé le dictionnaire ci-dessous de paramètres pour effectuer le tuning des hyperparamètres :
-    """
-    st.write(text)
-
-
-    image_path = "img/image095.png" 
-    st.image(image_path, width=1000)
-
-    text = """
     On obtient comme meilleurs paramètres principaux un nombre de couches de 2, un taux de dropout de 0.3 et une activation par la fonction tanh. 
-    Après tuning avec ces paramètres, on observe une convergence de la fonction Loss vers 0, équivalente entre l’ensemble de validation et d’entrainement.
+    Avec cette optimisation, on observe une convergence de la fonction Loss vers 0, équivalente entre l’ensemble de validation et d’entrainement.
     Nous obtenons les valeurs suivantes qui sont très satisfaisantes sur les ensembles de training et de test, avec une légère amélioration :
     \n - MAPE sur l’ensemble de training : 13.19%
     \n - sMAPE sur l’ensemble de training : 12.47%
