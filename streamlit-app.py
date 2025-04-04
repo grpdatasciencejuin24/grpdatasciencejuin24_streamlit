@@ -90,21 +90,21 @@ st.sidebar.markdown(
 )
 
 st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/simon-pierre-silga-3076121a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">Sidney HANIFA <img src="data:image/png;base64,{}" width="25"></a>""".format(
+    """<a href="https://fr.linkedin.com/in/sidneyhanifa">Sidney HANIFA <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
 )
 
 st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/your-profile-username/">Simon-Pierre SILGA <img src="data:image/png;base64,{}" width="25"></a>""".format(
+    """<a href="https://www.linkedin.com/in/simon-pierre-silga-3076121a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app>Simon-Pierre SILGA <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
 )
 
 st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/your-profile-username/">Farah VARSALLY <img src="data:image/png;base64,{}" width="25"></a>""".format(
+    """<a href="">Farah VARSALLY <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
