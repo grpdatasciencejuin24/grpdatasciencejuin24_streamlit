@@ -97,7 +97,7 @@ st.sidebar.markdown(
 )
 
 st.sidebar.markdown(
-    """<a href="https://www.linkedin.com/in/simon-pierre-silga-3076121a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app>Simon-Pierre SILGA <img src="data:image/png;base64,{}" width="25"></a>""".format(
+    """<a href="https://lu.linkedin.com/in/simon-pierre-silga-3076121a">Simon-Pierre SILGA <img src="data:image/png;base64,{}" width="25"></a>""".format(
         base64.b64encode(open("img/linkedin.png", "rb").read()).decode()
     ),
     unsafe_allow_html=True,
