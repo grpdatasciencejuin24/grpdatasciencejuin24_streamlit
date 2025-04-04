@@ -22,11 +22,11 @@ def tab_contexte_enjeux():
 \n
 1.	Pour le Ministère de la santé, 
  
-L’enjeu est de connaître au plus tôt si les victimes d’ accidents sont blessées graves pour optimiser la prise en charge (transport de la victime, 1er soins, …), la qualité et le délai du traitement pour mettre tout en œuvre pour les sauver. 
+L’enjeu est de connaître au plus tôt si les victimes d’ accidents sont blessées graves, en utilisant la prédiction d'un modèle de machine learning de classification, pour optimiser la prise en charge (transport de la victime, 1er soins, …), la qualité et le délai du traitement pour mettre tout en œuvre pour les sauver. 
 \n
 2.	Pour le Ministère de l’intérieur,
  
-L’enjeu est de prédire le nombre total des accidents pour justifier et mettre en place les moyens nécessaires (optimiser l’affectation et la mobilisation des forces de l’ordre sur l’ensemble du territoire, développer des campagnes de sensibilisation et de dissuasion *, …) pour répondre aux directives de la CEE.
+L’enjeu est de prédire le nombre total des accidents, en utilisant les times-series, pour justifier et mettre en place les moyens nécessaires (optimiser l’affectation et la mobilisation des forces de l’ordre sur l’ensemble du territoire, développer des campagnes de sensibilisation et de dissuasion *, …) pour répondre aux directives de la CEE.
 
 \n
 *lutte contre la consommation d’alcool et de stupéfiants, utilisation du téléphone portable au volant, limitation de vitesse, contrôle de vitesse, contrôle du taux d’alcoolémie, …
