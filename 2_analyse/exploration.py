@@ -39,16 +39,27 @@ st.write(text)
 image_path = "img/grav.png" 
 st.image(image_path, width=400)
 
+st.subheader("Variable âge")
+
+text = """
+Nous avons défini la variable «age d’un usager», qui nous semble plus parlante que la variable « an_naiss » de l’année de naissance d’un usage. 
+Cela nous permet d’identifier facilement les outliers avec des âges supérieurs à 100 ans, candidats à la suppression.
+"""
+st.write(text)
+
+image_path = "img/image032.png" 
+st.image(image_path, width=1400)
+
 
 st.subheader("Variable heure")
 
 text = """
 On peut constater à partir de la figure ci-dessous que les accidents sont majoritairement situés vers 9h du matin et vers 17h pour toutes les classes de gravités.
 """
+st.write(text)
 
 image_path = "img/image031.png" 
 st.image(image_path, width=800)
-
 
 st.subheader("Valeurs nulles")
 
@@ -91,7 +102,7 @@ st.image(image_path, width=800)
 
 st.header("Interactive map view")
 text = """
-Nous avons implémenté une « map view » interactive à partir du module folium (6).
+Nous avons implémenté une « map view » interactive à partir du module folium.
 Celle-ci affiche la géolocalisation des accidents avec leur gravité. 
 Les cercles de couleurs vertes, bleues, rouges et noires, correspondent respectivement aux gravités des accidents indemnes, blessés légers, blessés hospitalisés et tués par accident routier.
 """
