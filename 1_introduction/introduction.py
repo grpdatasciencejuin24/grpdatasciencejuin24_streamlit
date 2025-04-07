@@ -11,6 +11,13 @@ st.title("Introduction")
 #st.info('This is a purely informational message', icon="ℹ️")
 #st.warning('This is a warning', icon="⚠️")
 
+
+def tab_accueil():
+
+    video_file = open("img/Animation1.mp4", "rb")
+    video_bytes = video_file.read()
+    st.video(video_bytes,loop=True, autoplay=True)
+
 def tab_contexte_enjeux():
 
     container1 = st.container(border=True)
@@ -48,28 +55,22 @@ def tab_methodologie_planning():
 
     container1.write(text)
 
-    option = container1.selectbox(
-    "",
-    ("Image","Vidéo"),
-    )
-
-    if option == "Vidéo":
-        video_file = open("img/Animation1.mp4", "rb")
-        video_bytes = video_file.read()
-        container1.video(video_bytes,loop=True, autoplay=True)
-    if option == "Image":
-        image_path = "img/Phases.png" 
-        container1.image(image_path, width=1200) 
+    image_path = "img/Phases.png" 
+    container1.image(image_path, width=1200) 
 
     return
 
 
-tab1, tab2 = st.tabs(
-        ["Contexte et enjeux", "Méthodologie et planning projet"]
+tab1, tab2, tab3 = st.tabs(
+        ["Accueil","Contexte et enjeux", "Méthodologie et planning projet"]
     )
 
+
 with tab1:
-        tab_contexte_enjeux()
+    tab_accueil()
 
 with tab2:
-        tab_methodologie_planning()
+    tab_contexte_enjeux()
+
+with tab3:
+    tab_methodologie_planning()
